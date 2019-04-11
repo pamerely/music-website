@@ -1,0 +1,107 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	text-decoration: none;
+	outline: none;
+}
+#app{
+	overflow: hidden;
+}
+.clear::after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.cleat{
+    zoom: 1;
+}
+.font{
+    height: 1.56rem;
+    padding: 0.6rem 4%;
+    font: 1rem/ 1.56rem "微软雅黑";
+    color: #46b4e6;
+}
+.icon {
+	width: 1em;
+	height: 1em;
+	vertical-align: -0.15em;
+	fill: currentColor;
+	overflow: hidden;
+  }
+.recom-song{
+    	width: 105%;
+    	padding: 0 3% 0;
+    }
+.recom-song>div{
+	    width: 23%;
+	    overflow: hidden;
+	    margin: 0 9% .62rem 1%;
+	    float: left;
+	    cursor: pointer;
+    }
+.recom-song>.hot{
+ 	width: 26%;
+    margin: 0 6% .37rem 0;
+   
+ }
+.recom-song .hotBox{
+	width: 96%;
+    border: 1px solid #d0e3ee;
+    height: 1.68rem;
+    line-height: 1.68rem;
+    background: #fff;
+    font: 1rem/ 1.68rem "微软雅黑";
+    color: #333;
+    text-align: center;
+    margin: 0 6% .37rem 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/*弹出框*/
+.mint-msgbox{
+    background: #333;
+    text-align: center;
+
+}
+.mint-msgbox-title{
+    font-family: '宋体';
+    color: #d0d0d0;
+    font-weight: 400;
+}
+.mint-msgbox-content{
+	border-bottom: none;
+	font-weight: 400;
+}
+.mint-msgbox-btn{
+    border-top: 1px solid #444;
+    color: #b38e5d;
+    background: #333;
+}
+
+/*进度条*/
+.mt-range{
+	width: 60%;
+	margin: 0 auto;
+	height: 15px;
+	display: inline-block;
+}
+.mt-range-thumb{
+	width: 15px;
+	height: 15px;
+	top: 3px;
+}
+.mt-range-runway{
+	margin-top: 11px;
+}
+.play-p{
+    font: 12px/15px "微软雅黑";
+}
+.mt-range-progress{
+	margin-top: 11px;
+}
+.mint-cell-wrapper{
+	background-image: none;
+}
