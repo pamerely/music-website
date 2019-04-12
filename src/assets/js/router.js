@@ -2,7 +2,7 @@ import VueRouter from 'vue-router'
 
 // index
 import recommend from '../../component/index/recommend.vue'
-import rank from '../../component/index/rank.vue'
+// import rank from '../../component/index/rank.vue'
 import classify from '../../component/index/classify.vue'
 import singer from '../../component/index/singer.vue'
 import mv from '../../component/index/mv.vue'
@@ -28,8 +28,20 @@ import singlistPlay from '../../component/other/singlist-play.vue'
 import SingerDetail from '../../component/other/singerDetail.vue'
 
 // rank
+
 import rankhot from '../../component/rank/rank-hot.vue'
 import play from '../../component/rank/play.vue'
+
+
+// search
+import Search from '../../component/search/search.vue'
+
+// user
+import UserCenter from '../../component/user-center/user-center.vue'
+
+// Rank
+import Rank from '../../component/rank/rank.vue'
+import TopList from '../../component/top-list/top-list.vue'
 
 export default new VueRouter({
 	routes:[
@@ -41,12 +53,18 @@ export default new VueRouter({
 		},
 		{
 			path:`/search`,
-			component:search
+			component:Search
 		},
 		{
-			path:`/rank`,
-			component:rank
-		},
+			path: '/rank',
+			component: Rank,
+			children: [
+			  {
+				path: ':id',
+				component: TopList
+			  }
+			]
+		  },
 		{
 			path:`/classify`,
 			component:classify
@@ -118,6 +136,20 @@ export default new VueRouter({
 		{
 			path:`/favorite`,
 			component:favorite
+		},
+		{
+			path: '/search',
+			component: Search,
+			children: [
+				{
+				path: ':id',
+				component: SingerDetail
+				}
+			]
+		},
+		{
+			path: '/user',
+			component: UserCenter
 		},
 		{
 			path:`/*`,

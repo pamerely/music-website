@@ -6,10 +6,10 @@
           class="listview"
           ref="listview">
     <ul>
-      <li v-for="(group,i) in data" :key="i" class="list-group" ref="listGroup">
+      <li v-for="group in data" class="list-group" ref="listGroup">
         <h2 class="list-group-title">{{group.title}}</h2>
         <uL>
-          <li @click="selectItem(item)" v-for="(item,j) in group.items" :key="j" class="list-group-item">
+          <li @click="selectItem(item)" v-for="item in group.items" class="list-group-item">
             <img class="avatar" v-lazy="item.avatar">
             <span class="name">{{item.name}}</span>
           </li>
@@ -98,10 +98,8 @@
         this.$refs.listview.refresh()
       },
       scroll(pos) {
-        //   检测到better-scroll滚动的Y值
         this.scrollY = pos.y
       },
-    //   当data变化是，计算group的高度
       _calculateHeight() {
         this.listHeight = []
         const list = this.$refs.listGroup
@@ -128,7 +126,6 @@
     },
     watch: {
       data() {
-        //   数据变化到dom变化有个延时
         setTimeout(() => {
           this._calculateHeight()
         }, 20)

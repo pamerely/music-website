@@ -9,9 +9,13 @@ const urlencodedParser = bodyParser.urlencoded({extended:false});
 const ObjectId = require('mongodb').ObjectId;
 const db = require('./db')
 
+// 获取推荐歌曲数据
 var getDiscList = require('./controll/getDescList.js');
-
 router.get('/api/getDiscList', getDiscList)
+
+// 获取歌词数据
+var lyric = require('./controll/lyric.js');
+router.get('/api/lyric', lyric)
 
 // 注册
 var phoneNum = (req, res)=>{

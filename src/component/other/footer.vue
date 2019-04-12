@@ -1,5 +1,5 @@
 <template>
-	<footer>
+	<footer v-show="this.$store.state.footerShow">
 		<!-- {{autoplay()}} -->
 		<span>
 			<router-link to="/play">

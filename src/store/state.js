@@ -15,6 +15,7 @@ const state = {
   playHistory: loadPlay(),
   favoriteList: loadFavorite(),
   headTitle:"",
+  footerShow:false,
   list:[
         {
           src:'/src/assets/images/audio/1348206807654_.jpg',

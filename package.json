@@ -11,12 +11,14 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-runtime": "^6.0.0",
+    "fastclick": "^1.0.6",
     "better-scroll": "^1.15.1",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
     "fs": "0.0.1-security",
-    "good-storage": "^1.1.0",
     "jsonp": "^0.2.1",
     "md5": "^2.2.1",
     "mint-ui": "^2.2.13",
@@ -29,7 +31,11 @@
     "vue": "^2.5.11",
     "vue-lazyload": "^1.2.6",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "create-keyframe-animation": "^0.1.0",
+    "js-base64": "^2.1.9",
+    "lyric-parser": "^1.0.1",
+    "good-storage": "^1.0.1"
   },
   "browserslist": [
     "> 1%",

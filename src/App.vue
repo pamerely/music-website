@@ -20,7 +20,6 @@
           <li v-for="(v,i) in nav" :key="i">
             <router-link :to="v.router">{{v.con}}</router-link>
           </li>
-      
         </ul>
       </nav>
    </header>
@@ -29,7 +28,7 @@
     	  <router-view @send="loginMsg"></router-view>
   
     <!-- </keep-alive> -->
-    
+    <player></player>
     <v-footer></v-footer>
   </div>
 </template>
@@ -37,12 +36,13 @@
 <script>
   import Scroll from './base/scroll/scroll'
 
-
+  import plaryer from './component/player/player'
 	import footer from './component/other/footer.vue'
 	export default {
 		components:{
       'v-footer':footer,
       'scroll':Scroll,
+      player
      
 
 		},
@@ -76,7 +76,7 @@
     },
     methods:{
       loginMsg(data){
-        console.log(data)
+        // console.log(data)
         if(!data){
           data='登录';
           this.headRouter="login"
