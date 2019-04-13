@@ -1,5 +1,6 @@
 <template>
-	<main id="my">
+	<scroll :probe-type="probeType" id="my">
+		<div class="recommendCon">
 		<!--轮播图-->
 		
 		<mt-swipe :auto="3000">
@@ -122,18 +123,23 @@
 			
 		</div>
 		
-	</main>
-		
+		</div>
+	</scroll>
 		
 </template>
 
 <script >
-	import {getRecommend, getDiscList} from '../../api/getRecommend.js'
+	import scroll from '../../base/scroll/scroll'
+	import {getRecommend} from '../../api/getRecommend.js'
 	import {ERR_OK} from '../../api/config.js'
 	export default{
 		created(){
 			this._getRecommend();
+			this.probeType = 3;
 			
+		},
+		components:{
+			scroll
 		},
 		methods:{
 			_getRecommend(){
@@ -148,13 +154,7 @@
 					}
 				})
 			},
-			_getDiscList(){
-				getDiscList().then((res)=>{
-					if(res.code===ERR_OK){
-						console.log(res.data)
-					}
-				})
-			}
+			
 		},
 		mounted(){
 		
@@ -244,6 +244,11 @@
 </script>
 <style>
 	#my{
+		position: fixed;
+		top:0;
+		bottom:0;
+		height:calc(100% - 95px);
+		overflow: hidden;
 		width: 100%;
 		padding-bottom: 3rem;
 	}
@@ -253,7 +258,6 @@
 		height: 0px;
 		width:100%;
 	}
-
 	#my .mint-swipe-items-wrap img{
 		width: 100%;
 	}
@@ -263,7 +267,6 @@
 	    left: 67%; 
 	    -webkit-transform: translateX(0%); 
 	    transform: translateX(0%); 
-
     }
     #my .mint-swipe-indicator{
     	background:rgba(210,210,210,0.35);
@@ -275,8 +278,7 @@
     #my .newsong{
     	display: flex;
     	width: 100%;
-    	padding: 0 3%;
-    	
+    	padding: 0 3%;   	
     }
     #my .newsong>p{
     	flex: 1;

@@ -104,7 +104,7 @@
           box-sizing: border-box
           width: 16px
           height: 16px
-          border: 3px solid $color-text
+          border: 1px solid $color-text-f
           border-radius: 50%
           background: $color-theme
 </style>

@@ -4,11 +4,11 @@
       <div class="header">
         <h1 class="title">添加歌曲到列表</h1>
         <div class="close" @click="hide">
-          <i class="icon-close"></i>
+          <i class="icon-close iconfont icon-baseline-close-px"></i>
         </div>
       </div>
       <div class="search-box-wrapper">
-        <search-box ref="searchBox" @query="onQueryChange" placeholder="搜索歌曲"></search-box>
+        <search-box ref="searchBox" @query="onQueryChange" placeholder="搜索歌曲" :searchTop="false"></search-box>
       </div>
       <div class="shortcut" v-show="!query">
         <switches :switches="switches" :currentIndex="currentIndex" @switch="switchItem"></switches>

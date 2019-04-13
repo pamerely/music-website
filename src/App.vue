@@ -36,7 +36,7 @@
 <script>
   import Scroll from './base/scroll/scroll'
 
-  import plaryer from './component/player/player'
+  import player from './component/player/player'
 	import footer from './component/other/footer.vue'
 	export default {
 		components:{

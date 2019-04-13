@@ -12,7 +12,7 @@
         </div>
         <div class="top">
           <div class="back" @click="back">
-            <i class="icon-back"></i>
+            <i class="iconfont icon-houtui icon-back"></i>
           </div>
           <h1 class="title" v-html="currentSong.name"></h1>
           <h2 class="subtitle" v-html="currentSong.singer"></h2>
@@ -57,19 +57,19 @@
           </div>
           <div class="operators">
             <div class="icon i-left" @click="changeMode">
-              <i :class="iconMode"></i>
+              <i class="iconfont" :class="iconMode"></i>
             </div>
             <div class="icon i-left" :class="disableCls">
-              <i @click="prev" class="icon-prev"></i>
+              <i @click="prev" class="icon-prev iconfont icon-shangyishoushangyige"></i>
             </div>
             <div class="icon i-center" :class="disableCls">
-              <i @click="togglePlaying" :class="playIcon"></i>
+              <i @click="togglePlaying" class="iconfont" :class="playIcon"></i>
             </div>
             <div class="icon i-right" :class="disableCls">
-              <i @click="next" class="icon-next"></i>
+              <i @click="next" class="icon-next iconfont icon-xiayigexiayishou"></i>
             </div>
             <div class="icon i-right">
-              <i @click="toggleFavorite(currentSong)" class="icon" :class="getFavoriteIcon(currentSong)"></i>
+              <i @click="toggleFavorite(currentSong)" class="icon iconfont" :class="getFavoriteIcon(currentSong)"></i>
             </div>
           </div>
         </div>
@@ -86,11 +86,11 @@
         </div>
         <div class="control">
           <progress-circle :radius="radius" :percent="percent">
-            <i @click.stop="togglePlaying" class="icon-mini" :class="miniIcon"></i>
+            <i @click.stop="togglePlaying" class="icon-mini iconfont" :class="miniIcon"></i>
           </progress-circle>
         </div>
         <div class="control" @click.stop="showPlaylist">
-          <i class="icon-playlist"></i>
+          <i class="icon-playlist iconfont icon-bofangliebiao"></i>
         </div>
       </div>
     </transition>
@@ -133,10 +133,10 @@
         return this.playing ? 'play' : 'play pause'
       },
       playIcon() {
-        return this.playing ? 'icon-pause' : 'icon-play'
+        return this.playing ? 'icon-iconfront-' : 'icon-icon-'
       },
       miniIcon() {
-        return this.playing ? 'icon-pause-mini' : 'icon-play-mini'
+        return this.playing ? 'icon-iconfront-' : 'icon-icon-'
       },
       disableCls() {
         return this.songReady ? '' : 'disable'
@@ -589,9 +589,11 @@
         .operators
           display: flex
           align-items: center
+          height: 50px
           .icon
             flex: 1
             color: $color-theme
+            height: 50px
             &.disable
               color: $color-theme-d
             i
@@ -602,7 +604,7 @@
             padding: 0 20px
             text-align: center
             i
-              font-size: 40px
+              font-size: 34px
           .i-right
             text-align: left
           .icon-favorite
@@ -626,7 +628,7 @@
       z-index: 180
       width: 100%
       height: 60px
-      background: $color-highlight-background
+      background: $color-theme
       &.mini-enter-active, &.mini-leave-active
         transition: all 0.4s
       &.mini-enter, &.mini-leave-to
@@ -635,6 +637,7 @@
         flex: 0 0 40px
         width: 40px
         padding: 0 10px 0 20px
+        height: 40px
         img
           border-radius: 50%
           &.play
@@ -652,23 +655,26 @@
           margin-bottom: 2px
           no-wrap()
           font-size: $font-size-medium
-          color: $color-text
+          color: $color-text-f
+          font-weight: 400
         .desc
           no-wrap()
           font-size: $font-size-small
-          color: $color-text-d
+          color: $color-text-f
+          font-weight: 400
       .control
         flex: 0 0 30px
         width: 30px
         padding: 0 10px
         .icon-play-mini, .icon-pause-mini, .icon-playlist
-          font-size: 30px
-          color: $color-theme-d
+          font-size: 26px
+          color: $color-text-f
         .icon-mini
           font-size: 32px
           position: absolute
           left: 0
           top: 0
+          color: $color-text-f
 
   @keyframes rotate
     0%

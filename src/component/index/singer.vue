@@ -102,7 +102,7 @@ const HOT_SINGER_LEN = 10
 	.singer{
     position: fixed;
     z-index: 33;
-		top: 88px;
+		top: 95px;
 		bottom: 0;
 		width: 100%;
   }

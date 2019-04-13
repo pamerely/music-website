@@ -15,12 +15,14 @@
 				</p>
 			</div>
 		</div>
-		<v-list :list="list"></v-list>
+		
+			<v-list :list="list"></v-list>
+		
 	</main>
 </template>
 
 <script >
-
+	
 	import head from '../other/head.vue'
 	import list from './list.vue'
 	export default{
@@ -35,7 +37,8 @@
 		},
 		components:{
 			'aaa':head,
-			'v-list':list
+			'v-list':list,
+			scroll
 		},
 		mounted(){
 			this.$http.get("./src/assets/js/data.json")
@@ -47,8 +50,9 @@
 </script>
 <style scoped>
 	.main{
-		position: relative;
-		
+		position: fixed;
+		height:100%;
+		width: 100%;
 		overflow: hidden;
 		background: #FFFFFF;
 		z-index: 2;

@@ -4,7 +4,7 @@
       <div class="list-wrapper" @click.stop>
         <div class="list-header">
           <h1 class="title">
-            <i class="icon" :class="iconMode" @click="changeMode"></i>
+            <i class="icon iconfont" :class="iconMode" @click="changeMode"></i>
             <span class="text">{{modeText}}</span>
             <span class="clear" @click="showConfirm"><i class="icon-clear"></i></span>
           </h1>
@@ -13,20 +13,20 @@
           <transition-group name="list" tag="ul">
             <li :key="item.id" ref="listItem" class="item" v-for="(item,index) in sequenceList"
                 @click="selectItem(item,index)">
-              <i class="current" :class="getCurrentIcon(item)"></i>
+              <i class="current iconfont" :class="getCurrentIcon(item)"></i>
               <span class="text">{{item.name}}</span>
               <span @click.stop="toggleFavorite(item)" class="like">
-                <i :class="getFavoriteIcon(item)"></i>
+                <i class="iconfont" :class="getFavoriteIcon(item)"></i>
               </span>
               <span @click.stop="deleteOne(item)" class="delete">
-                <i class="icon-delete"></i>
+                <i class="icon-delete iconfont icon-delete"></i>
               </span>
             </li>
           </transition-group>
         </scroll>
         <div class="list-operate">
           <div @click="addSong" class="add">
-            <i class="icon-add"></i>
+            <i class="icon-add iconfont icon-add"></i>
             <span class="text">添加歌曲到队列</span>
           </div>
         </div>
@@ -81,7 +81,7 @@
       },
       getCurrentIcon(item) {
         if (this.currentSong.id === item.id) {
-          return 'icon-play'
+          return 'icon-icon-'
         }
         return ''
       },
@@ -165,7 +165,7 @@
           align-items: center
           .icon
             margin-right: 10px
-            font-size: 30px
+            font-size: 20px
             color: $color-theme-d
           .text
             flex: 1
@@ -198,7 +198,7 @@
             flex: 1
             no-wrap()
             font-size: $font-size-medium
-            color: $color-text-d
+            color: $color-text-l
           .like
             extend-click()
             margin-right: 15px
@@ -217,9 +217,9 @@
           display: flex
           align-items: center
           padding: 8px 16px
-          border: 1px solid $color-text-l
+          border: 1px solid $color-theme
           border-radius: 100px
-          color: $color-text-l
+          color: $color-theme
           .icon-add
             margin-right: 5px
             font-size: $font-size-small-s
@@ -228,7 +228,7 @@
       .list-close
         text-align: center
         line-height: 50px
-        background: $color-background
+        background: $color-theme
         font-size: $font-size-medium-x
-        color: $color-text-l
+        color: $color-text-f
 </style>

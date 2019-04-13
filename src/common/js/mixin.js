@@ -29,7 +29,7 @@ export const playlistMixin = {
 export const playerMixin = {
   computed: {
     iconMode() {
-      return this.mode === playMode.sequence ? 'icon-sequence' : this.mode === playMode.loop ? 'icon-loop' : 'icon-random'
+      return this.mode === playMode.sequence ? 'icon-ziyuanldpi' : this.mode === playMode.loop ? 'icon-danquxunhuan' : 'icon-suijibofang'
     },
     ...mapGetters([
       'sequenceList',
@@ -67,9 +67,9 @@ export const playerMixin = {
     },
     getFavoriteIcon(song) {
       if (this.isFavorite(song)) {
-        return 'icon-favorite'
+        return 'icon-love_icon'
       }
-      return 'icon-not-favorite'
+      return 'icon-love_icon'
     },
     isFavorite(song) {
       const index = this.favoriteList.findIndex((item) => {

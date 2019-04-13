@@ -2,7 +2,7 @@
   <div class="rank" ref="rank">
     <scroll :data="topList" class="toplist" ref="toplist">
       <ul>
-        <li @click="selectItem(item)" class="item" v-for="item in topList">
+        <li @click="selectItem(item)" class="item" v-for="(item,index) in topList" :key="index">
           <div class="icon">
             <img width="100" height="100" v-lazy="item.picUrl"/>
           </div>
@@ -85,7 +85,7 @@
   .rank
     position: fixed
     width: 100%
-    top: 88px
+    top: 95px
     bottom: 0
     z-index :41
     .toplist

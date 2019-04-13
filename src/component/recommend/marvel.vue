@@ -1,17 +1,21 @@
 <template>
 	<main class="main">
 		<v-header :title='title'></v-header>
-		<v-con :mvlist="mvlist"></v-con>
+		<scroll class="mvList">
+			<v-con :mvlist="mvlist"></v-con>
+		</scroll>
 	</main>
 </template>
 
 <script >
+	import scroll from '../../base/scroll/scroll'
 	import head from '../other/head.vue'
 	import mvlist from '../other/mvlist.vue'
 	export default{
 		components:{
 			'v-header':head,
-			'v-con':mvlist
+			'v-con':mvlist,
+			scroll
 		},
 		data(){
 			return{
@@ -105,11 +109,20 @@
 </script>
 <style scoped>
 	.main{
-		
-		position: relative;
+		width: 100%;
+		position: fixed;
 		background: #FFFFFF;
 		overflow: hidden;
 		z-index: 7;
+		height:100%;
 	}
-	
+	.mvList{
+		position: fixed;
+		top:4rem;
+		bottom:0;
+		height:calc(100% - 95px);
+		overflow: hidden;
+		width: 100%;
+		padding-bottom: 3rem;
+	}
 </style>

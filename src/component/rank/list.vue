@@ -1,5 +1,6 @@
 <template>
 	<section>
+		<scroll class="songList" :data="songList">
 		<ul>
 			<li v-for="(v,i) in list" :key="i">
 				<div class="sing-con">
@@ -21,31 +22,64 @@
 				</a>
 			</li>
 		</ul>
+		</scroll>
 		
 	</section>
 </template>
 
 <script >
-	
+	import scroll from '../../base/scroll/scroll'
+	import {getDiscList} from '../../api/getRecommend.js'
+	import {ERR_OK} from '../../api/config.js'
+import { setTimeout, clearTimeout } from 'timers';
 	export default{
 		data(){
 			return{
-				show:false
+				show:false,
+				songList:[]
 			}
 		},
-		props:['list']
+		props:['list'],
+		components:{
+			scroll
+		},
+		created(){
+			this.timer = setTimeout(function(){
+				this.songList = this.list
+			}, 200)
+
+		},
+		destroyed(){
+			clearTimeout(this.timer)
+		},
+		methods:{
+			_getDiscList(){
+				getDiscList().then((res)=>{
+					if(res.code===ERR_OK){
+						this.songList = res.data.list
+					}
+				})
+			}
+		},
+		watch:{
+			songList(){
+				console.log(this.songList)
+			}
+		}
 	}
 </script>
 <style scoped>
 	section{
 		width:100%;
+		position:fixed;
+		height: 100%;
 	}
-	section>ul{
+	section ul{
 	    width: 92%;
 	    margin: 0 auto;
 	    overflow: hidden;
 	}
-	section>ul>li{
+	section ul>li{
 	    width: 100%;
 	    height: 40px;
 	    overflow: hidden;
@@ -97,5 +131,13 @@
 	}
 	.one>span>img{
 		width:100%;
+	}
+	.songList{
+		position: fixed;
+		top:180px;
+		bottom:0;
+		height:calc(100% - 95px);
+		overflow: hidden;
+		width: 100%;
 	}
 </style>

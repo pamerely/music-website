@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="search-top">
+    <div class="search-top" v-show="searchTop">
       <img src="../../assets/images/recommend/back.png" @click="back()" />
       <span>搜索</span>
     </div>
@@ -23,6 +23,10 @@
       placeholder: {
         type: String,
         default: '搜索歌曲、歌手'
+      },
+      searchTop: {
+        type: Boolean,
+        default:true
       }
     },
     data() {
