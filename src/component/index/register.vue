@@ -18,7 +18,7 @@
     </section>
 </template>
 <script>
-
+import { MessageBox } from 'mint-ui';
 import head from '../other/head.vue'
 export default {
     components:{
@@ -70,7 +70,8 @@ export default {
                     if(res.data==='ok'){
                         this.$router.push({name: 'login', params:{user:this.username}});
                     }else{
-                        alert("网络异常，注册失败")
+                        MessageBox('网络异常，注册失败');
+                   
                     }
                 }).catch((error)=>{
                     console.log(error)

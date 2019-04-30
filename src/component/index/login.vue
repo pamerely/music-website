@@ -16,6 +16,7 @@
     </section>
 </template>
 <script>
+import { MessageBox } from 'mint-ui';
 import head from '../other/head.vue'
 export default {
     components:{
@@ -48,18 +49,16 @@ export default {
                     phone:this.phone,
                     password:this.password
                 })).then((res)=>{
-        
-
                     let data = res.data
                     if(data.code===0){
                         this.$router.push({name: 'recommend', params: {user:data.user}})
                     }else{
-                        alert("密码错误，请输入正确的密码")
+                        MessageBox('密码错误，请输入正确的密码');
+                
                     }
                 }).catch((error)=>{
                     console.log(error)
-                })
-             
+                })    
             }
            
         },

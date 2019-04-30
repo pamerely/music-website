@@ -377,12 +377,14 @@
         }
         return num
       },
+      // 计算图片动画的偏移量
       _getPosAndScale() {
         const targetWidth = 40
         const paddingLeft = 40
         const paddingBottom = 30
         const paddingTop = 80
         const width = window.innerWidth * 0.8
+        // 初始的缩放比例
         const scale = targetWidth / width
         const x = -(window.innerWidth / 2 - paddingLeft)
         const y = window.innerHeight - paddingTop - width / 2 - paddingBottom

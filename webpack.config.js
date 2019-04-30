@@ -89,9 +89,7 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      // 'src': resolve('src'),
-      // "component": resolve('src/component'),
-      // "assets": resolve('src/assets')
+ 
     },
     extensions: ['*', '.js', '.vue', '.json']
   },
@@ -99,22 +97,16 @@ module.exports = {
     historyApiFallback: true,
     noInfo: true,
     overlay: true,
-
     //让前后端http请求都转到node的3000端口，而不是前端的8080端口
     proxy: {
       '/api': {
         target: 'http://localhost:3000', // 代理路径
-        changeOrigin: true, // 是否存在跨域
-        
+        changeOrigin: true, // 是否存在跨域    
       }
     }
   },
   
-  // devServer: {
-  //   historyApiFallback: true,
-  //   noInfo: true,
-  //   overlay: true
-  // },
+ 
   performance: {
     hints: false
   },

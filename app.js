@@ -14,7 +14,6 @@ app.get('*', function(req, res){
     const html = fs.readFileSync(path.resolve(__dirname, '../dist/index.html'), "utf-8")
     res.send(html)
 })
-
 // 允许跨域访问  也可以通过npm cors进行设置=
 app.all('*', function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*')
@@ -23,6 +22,9 @@ app.all('*', function (req, res, next) {
     res.header('Access-Control-Allow-Headers', 'Content-Type')
     next()
   })
+
+
+
 // app.use('/',router)
 
 app.listen(3000);

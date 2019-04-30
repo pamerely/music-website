@@ -10,20 +10,26 @@ function findIndex(list, song) {
 }
 
 export const selectPlay = function ({commit, state}, {list, index}) {
+  // 顺序播放列表
   commit(types.SET_SEQUENCE_LIST, list)
   if (state.mode === playMode.random) {
     let randomList = shuffle(list)
+    // 播放列表
     commit(types.SET_PLAYLIST, randomList)
     index = findIndex(randomList, list[index])
   } else {
     commit(types.SET_PLAYLIST, list)
   }
+  // 当前播放歌曲
   commit(types.SET_CURRENT_INDEX, index)
+  // 播放器是否全屏显示
   commit(types.SET_FULL_SCREEN, true)
+  // 播放状态
   commit(types.SET_PLAYING_STATE, true)
 }
 
 export const randomPlay = function ({commit}, {list}) {
+  // 设置播放模式
   commit(types.SET_PLAY_MODE, playMode.random)
   commit(types.SET_SEQUENCE_LIST, list)
   let randomList = shuffle(list)
@@ -78,6 +84,7 @@ export const insertSong = function ({commit, state}, song) {
 }
 
 export const saveSearchHistory = function ({commit}, query) {
+  // 设置搜索历史记录
   commit(types.SET_SEARCH_HISTORY, saveSearch(query))
 }
 
@@ -120,10 +127,12 @@ export const deleteSongList = function ({commit}) {
 }
 
 export const savePlayHistory = function ({commit}, song) {
+  // 设置播放历史记录
   commit(types.SET_PLAY_HISTORY, savePlay(song))
 }
 
 export const saveFavoriteList = function ({commit}, song) {
+  // 设置喜欢列表
   commit(types.SET_FAVORITE_LIST, saveFavorite(song))
 }
 
