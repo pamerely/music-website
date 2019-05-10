@@ -20,6 +20,7 @@
 <script>
 import { MessageBox } from 'mint-ui';
 import head from '../other/head.vue'
+import md5 from 'md5'
 export default {
     components:{
         'v-head':head
@@ -63,7 +64,7 @@ export default {
                 this.$http.post('/api/register', this.$qs.stringify({
                     phone:this.phone,
                     user:this.username,
-                    password:this.password,
+                    password:md5(md5(this.password)),
                     email:this.email
                 })).then((res)=>{
                 

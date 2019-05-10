@@ -18,6 +18,7 @@
 <script>
 import { MessageBox } from 'mint-ui';
 import head from '../other/head.vue'
+import md5 from 'md5'
 export default {
     components:{
         'v-head':head
@@ -47,7 +48,7 @@ export default {
             if(this.passwordState!="error"&&this.phoneState!="error"){
                 this.$http.post('/api/login', this.$qs.stringify({
                     phone:this.phone,
-                    password:this.password
+                    password:md5(md5(this.password))
                 })).then((res)=>{
                     let data = res.data
                     if(data.code===0){

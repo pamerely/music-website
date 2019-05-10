@@ -8,6 +8,7 @@ import router from './assets/js/router.js'
 import axios from 'axios'
 import 'babel-polyfill'
 import fastclick from 'fastclick'
+import md5 from 'md5'
 Vue.prototype.$http=axios
 
 import '../node_modules/mint-ui/lib/style.css'

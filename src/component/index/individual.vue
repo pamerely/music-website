@@ -159,7 +159,7 @@ export default {
 }
 #individual .individual-footer{
     position: absolute;
-    bottom: 10px;
+    bottom: 55px;
     width: 100%;
     left: 0px;
     height: 50px;
