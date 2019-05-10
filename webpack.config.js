@@ -1,6 +1,8 @@
 var path = require('path')
 var webpack = require('webpack')
-var proxy = require('http-proxy-middleware')
+
+
+
 
 module.exports = {
   entry: './src/main.js',
@@ -105,7 +107,7 @@ module.exports = {
       }
     }
   },
-  
+
  
   performance: {
     hints: false

@@ -31,14 +31,15 @@ export default class Song {
     })
   }
 }
-
+// var num = 0
 export function createSong(musicData) {
-  var mp3=["/src/assets/images/video/gnzw.mp3","/src/assets/images/video/mubuzhuanjing.mp3",
+  var mp3=["/src/assets/images/video/mubuzhuanjing.mp3","/src/assets/images/video/你的酒馆对我打了烊.mp3","/src/assets/images/video/daoshu.mp3",
   "/src/assets/images/video/shijianshijin.mp3","/src/assets/images/video/tongyanwuji.mp3",
   "/src/assets/images/video/wangpaiyuanjia.mp3","/src/assets/images/video/wuyunzhong.mp3",
   "/src/assets/images/video/xiaorenwu.mp3","/src/assets/images/video/xingqiuzhuiluo.mp3",
-  "/src/assets/images/video/daoshu.mp3","/src/assets/images/video/piaoxiangbeifang.mp3"];
+  "/src/assets/images/video/piaoxiangbeifang.mp3", "/src/assets/images/video/gnzw.mp3"];
   let num = Math.floor(Math.random()*10);
+  // num++
   return new Song({
     id: musicData.songid,
     mid: musicData.songmid,

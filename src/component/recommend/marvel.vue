@@ -1,6 +1,6 @@
 <template>
 	<main class="main">
-		<v-header :title='title'></v-header>
+		<v-header :title='title' :search="true"></v-header>
 		<scroll class="mvList">
 			<v-con :mvlist="mvlist"></v-con>
 		</scroll>

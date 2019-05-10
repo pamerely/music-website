@@ -1,6 +1,9 @@
 import VueRouter from 'vue-router'
+import Vue from 'vue'
+Vue.use(VueRouter)
 
 // index
+
 import recommend from '../../component/index/recommend.vue'
 // import rank from '../../component/index/rank.vue'
 import classify from '../../component/index/classify.vue'
@@ -9,7 +12,6 @@ import mv from '../../component/index/mv.vue'
 import login from '../../component/index/login.vue'
 import register from '../../component/index/register.vue'
 import individual from '../../component/index/individual.vue'
-
 
 // recommend
 import search from '../../component/recommend/search.vue'
